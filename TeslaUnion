@@ -1,0 +1,48 @@
+CREATE TABLE tblUSCustomers(ID_U INT,Name VARCHAR(250),Email VARCHAR(250));
+CREATE TABLE tblAUCustomers(ID_A INT,Name VARCHAR(250),Email VARCHAR(250));
+CREATE TABLE tblEUCustomers(ID_A INT,Name VARCHAR(250),Email VARCHAR(250));
+
+INSERT INTO tblUSCustomers VALUES(1,'Peter','P@R.com');
+INSERT INTO tblUSCustomers VALUES(2,'Sam','S@S.com');
+INSERT INTO tblAUCustomers VALUES(1,'Ben','B@B.com');
+INSERT INTO tblAUCustomers VALUES(2,'Sam','S@S.com');
+INSERT INTO tblEUCustomers VALUES(1,'Sam','S@S.com');
+INSERT INTO tblEUCustomers VALUES(2,'Adam','A@A.com');
+
+SELECT * FROM tblUSCustomers;
+
+SELECT * FROM tblAUCustomers;
+
+SELECT * FROM tblUSCustomers
+UNION ALL
+SELECT * FROM tblAUCustomers;
+
+SELECT * FROM tblUSCustomers
+UNION
+SELECT * FROM tblAUCustomers;
+
+SELECT ID_U,Name,Email FROM tblUSCustomers
+UNION ALL
+SELECT ID_A,Name,Email FROM tblAUCustomers;
+
+
+SELECT ID_U,Name,Email FROM tblUSCustomers
+UNION ALL
+SELECT ID_A,Name,Email FROM tblAUCustomers
+ORDER BY Name;
+
+SELECT ID_U,Name,Email FROM tblUSCustomers
+UNION ALL
+SELECT ID_A,Name,Email FROM tblAUCustomers
+ORDER BY Name;
+
+
+SELECT * FROM tblUSCustomers
+UNION ALL 
+SELECT * FROM tblAUCustomers
+UNION ALL
+SELECT * FROM tblEUCustomers
+ORDER BY
+Name;
+
+
